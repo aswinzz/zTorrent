@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html >
+<head>
+<script src="https://use.fontawesome.com/261c46e821.js"></script>
+  <meta charset="UTF-8">
+  <title>zTorrent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <style type="text/css">
+        @charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Roboto|Open+Sans);
+/* 
+   iconmoon taken from 
+   script: https://codepen.io/SitePoint/pen/nIHkm
+   fonts : https://icomoon.io/demo.html
+*/
+@font-face {
+  font-family: 'icomoon';
+  src: url("https://d1azc1qln24ryf.cloudfront.net/4/icomoonio/icomoonio.woff2?bat3ax") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-close:before {
+  content: "";
+}
+
+/* iconmoon ends */
+body {
+  font-family: Open Sans;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul.items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul.items li.item {
+  position: relative;
+  padding: 15px;
+  margin: 15px;
+  border: #eee solid 5px;
+  border-radius: 15px;
+}
+ul.items li.item:hover {
+  background: #fafafa;
+}
+ul.items li.item .header {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #5393db;
+}
+ul.items li.item .delete {
+  position: absolute;
+  font-size: 18px;
+  right: 21px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff8080;
+  padding: 12px;
+  border-radius: 10px;
+}
+ul.items li.item .delete:hover {
+  background: #eee;
+  color: red;
+}
+ul.items li.item .delete:active {
+  background: #e1e1e1;
+}
+
+.info {
+  text-align: center;
+  color: #cccccc;
+  padding: 15px;
+  padding-top: 0;
+}
+      </style>
+
+  
+</head>
+
+<body>
+<center><h1>Search Results</h1></center>
+<hr>
+  <ul class="items">
+  <% for(var i=0;i<torrents.length;i++){ %>
+  <li class="item">
+    <div class="header"><%= torrents[i].title %></div>
+    <div class="metadata">
+    <% if(torrents[i].seeds){ %>
+     seeds: <%= torrents[i].seeds %>-<% } %> <% if(torrents[i].seeds){ %> peers:<%= torrents[i].peers %> - <% } %> size:<%= torrents[i].size %> - Torrent: <a href="<%= torrents[i].link %>"><i class="fa fa-magnet" aria-hidden="true" style="color:red"></i></a>
+    
+    </div>
+  </li>
+ <% } %>
+</ul>
+<div class="info">Torrent List Example | Header text was taken from horriblesubs.info</div>
+  
+  
+</body>
+</html>
