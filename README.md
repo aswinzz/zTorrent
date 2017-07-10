@@ -14,5 +14,11 @@ All Kind Of Contributions are welcome!!
 
 * Open `localhost:3000` in any browser
 
+# Snaps
+
+![scr1](scr1.png)
+
+![scr2](scr2.png)
+
 
  
